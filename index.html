@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Quiz</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css" />
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div id="quiz-container">
+      <h1 id="question"></h1>
+      <pre id="code" class="language-javascript"></pre>
+      <ul id="choices"></ul>
+      <button id="submit">Submit</button>
+    </div>
+
+    <div id="result-container" style="display: none;">
+      <h2 id="result"></h2>
+      <button id="restart">Restart Quiz</button>
+      <!-- <a id="explanation-link" href="explanation.html" target="_blank" style="display: none;">View Explanation</a> -->
+      <a id="explanation-link" href="explanation.html" target="_blank" style="display: none;">View Explanation</a>
+      <table id="explanation-table">
+        <thead>
+          <tr>
+            <th>Question</th>
+            <th>Explanation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Explanation rows will be dynamically added here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-javascript.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

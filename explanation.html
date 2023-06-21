@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Explanation</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    td.code-cell {
+      white-space: pre-wrap;
+    }
+    #restart-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 10px;
+      background-color: #ccc;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+
+    <button id="restart-button">Restart Quiz</button>
+
+  <h1>Quiz Explanation</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Question</th>
+        <th></th>
+        <th>Correct Answer</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody id="explanation-table"></tbody>
+  </table>
+
+
+  <script>
+    // Define quizData (replace with your actual quiz data)
+    const quizData = [
+  {
+    question: "What is the output of the following code snippet?",
+    code: "console.log(typeof null);",
+    choices: ["object", "null", "undefined", "function"],
+    correctAnswer: 0
+  },
+  {
+    question: "What is the output of the following code snippet?",
+    code: "console.log(1 + '1');",
+    choices: ["11", "2", "undefined", "NaN"],
+    correctAnswer: 0
+  },
+  {
+    question: "What is the output of the following code snippet?",
+    code: "console.log(0.1 + 0.2 === 0.3);",
+    choices: ["true", "false"],
+    correctAnswer: 1
+  },
+  {
+    question: "What is the output of the following code snippet?",
+    code: "function foo() {\n  console.log(this);\n}\nfoo();",
+    choices: ["Window object", "undefined", "null", "foo function"],
+    correctAnswer: 0
+  },
+  {
+    question: "What is the output of the following code snippet?",
+    code: "console.log(Math.max([2, 4, 6]));",
+    choices: ["6", "undefined", "NaN", "Error"],
+    correctAnswer: 3
+  },
+  {
+    question: "What is the output of the following code snippet?",
+    code: "const person = {\n  name: 'John',\n  age: 30\n};\nconsole.log(person.name);",
+    choices: ["'John'", "'name'", "'person'", "undefined"],
+    correctAnswer: 0
+  },
+  {
+    question: "What is the output of the following code snippet?",
+    code: "const x = 10;\nfunction foo() {\n  console.log(x);\n  const x = 20;\n}\nfoo();",
+    choices: ["10", "20", "undefined", "ReferenceError"],
+    correctAnswer: 3
+  },
+  {
+    question: "What is the output of the following code snippet?",
+    code: "console.log(2 + 3 * 4);",
+    choices: ["14", "20", "10", "23"],
+    correctAnswer: 1
+  },
+  {
+    question: "What is the output of the following code snippet?",
+    code: "console.log('2' + 3 * 4);",
+    choices: ["24", "14", "23", "11"],
+    correctAnswer: 2
+  },
+  {
+    question: "What is the output of the following code snippet?",
+    code: "console.log(typeof NaN);",
+    choices: ["number", "undefined", "NaN", "object"],
+    correctAnswer: 0
+  },
+  {
+    question: "What is the output of the following code snippet?",
+    code: "console.log(Array.isArray([]));",
+    choices: ["true", "false"],
+    correctAnswer: 0
+  },
+  {
+    question: "What is the output of the following code snippet?",
+    code: "console.log(1 === '1');",
+    choices: ["true", "false"],
+    correctAnswer: 1
+  }
+];
+
+
+    // Retrieve the explanations array from the query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const explanationsParam = urlParams.get('explanations');
+    const explanations = explanationsParam ? JSON.parse(decodeURIComponent(explanationsParam)) : [];
+
+    // Generate explanation table
+    const explanationTableBody = document.getElementById("explanation-table");
+    for (let i = 0; i < quizData.length; i++) {
+      const quiz = quizData[i];
+      const explanationRow = document.createElement("tr");
+      explanationRow.innerHTML = `
+        <td>${i + 1}</td>
+        <td colspan="2" class="code-cell">${quiz.question}<br><br><pre>${quiz.code}</pre></td>
+        <td>${quiz.choices[quiz.correctAnswer]}</td>
+        <td>${explanations[i] ? "Correct" : "Incorrect"}</td>
+      `;
+      explanationTableBody.appendChild(explanationRow);
+    }
+
+    // Handle restart quiz button click
+    const restartButton = document.getElementById("restart-button");
+    restartButton.addEventListener("click", () => {
+      window.location.href = "index.html"; 
+    });
+  </script>
+</body>
+</html>

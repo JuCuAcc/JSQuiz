@@ -1,0 +1,53 @@
+console.log(typeof null);
+VM92:1 object
+
+console.log(1 + '1');
+VM159:1 11
+
+console.log(0.1 + 0.2 === 0.3);
+VM275:1 false
+
+function foo(){
+    console.log(this);
+}
+foo();
+VM391:2 Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+
+console.log(Math.max([2,4,6]));
+VM494:1 NaN
+
+const person = {
+    name: 'John',
+    age: 30
+};
+console.log(person.name);
+VM663:5 John
+
+const x = 10;
+
+const x = 10;
+function foo(){
+    console.log(x);
+    const x = 20;
+}
+foo();
+VM855:3 Uncaught ReferenceError: Cannot access 'x' before initialization
+    at foo (<anonymous>:3:17)
+    at <anonymous>:6:1
+foo @ VM855:3
+(anonymous) @ VM855:6
+console.log(2 + 3 * 4);
+VM936:1 14
+
+console.log('2' + 3 * 4);
+VM945:1 212
+
+console.log(typeof NaN);
+VM1031:1 number
+
+console.log(Array.isArray([]));
+VM1130:1 true
+
+console.log(1 === '1');
+VM1202:1 false
+
