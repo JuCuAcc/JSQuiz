@@ -177,3 +177,74 @@ code[class*="language-"] {
   background-color: lightgreen;
   cursor: not-allowed;
 }
+
+
+/* For Mobile Devices*/
+@media only screen and (max-width: 600px) {
+  body {
+  font-size: 16px;
+  }
+  
+  .container {
+  padding: 10px;
+  }
+  
+  #quiz-container,
+  #result-container {
+  padding: 10px;
+  }
+  
+  h1,
+  h2 {
+  font-size: 24px;
+  }
+  
+  pre {
+  font-size: 12px;
+  padding: 5px;
+  }
+  
+  ul {
+  margin: 10px 0;
+  }
+  
+  li {
+  margin-bottom: 8px;
+  padding: 8px;
+  }
+  
+  button {
+  font-size: 14px;
+  padding: 8px 16px;
+  }
+  
+  /* Prism.js code highlighting styles */
+  pre[class="language-"] {
+  padding: 5px;
+  font-size: 12px;
+  }
+  
+  code[class*="language-"] {
+  font-size: 12px;
+  }
+  
+  /* Center align content vertically and horizontally */
+  html,
+  body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  }
+  
+  .container {
+  min-height: 100vh;
+  }
+  }
+  
+  @media only screen and (min-width: 601px) {
+  .container {
+  margin-top: 50px;
+  }
+  }
