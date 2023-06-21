@@ -239,7 +239,20 @@ code[class*="language-"] {
   }
   
   .container {
-  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  }
+  
+  #quiz-container,
+  #result-container {
+  flex-grow: 1;
+  width: 100%;
+  max-width: 500px;
   }
   }
   
@@ -248,3 +261,140 @@ code[class*="language-"] {
   margin-top: 50px;
   }
   }
+
+  /*Very Small Devices*/
+
+  @media only screen and (max-width: 320px) {
+    body {
+    font-size: 14px;
+    }
+    
+    .container {
+    padding: 5px;
+    }
+    
+    h1,
+    h2 {
+    font-size: 20px;
+    }
+    
+    pre {
+    font-size: 10px;
+    padding: 3px;
+    }
+    
+    li {
+    margin-bottom: 6px;
+    padding: 6px;
+    }
+    
+    button {
+    font-size: 12px;
+    padding: 6px 12px;
+    }
+    
+    /* Prism.js code highlighting styles */
+    pre[class="language-"] {
+    padding: 3px;
+    font-size: 10px;
+    }
+    
+    code[class*="language-"] {
+    font-size: 10px;
+    }
+    
+    /* Center align content vertically and horizontally */
+    html,
+    body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+    
+    .container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    }
+    
+    #quiz-container,
+    #result-container {
+    flex-grow: 1;
+    width: 100%;
+    max-width: 280px;
+    }
+    }
+    
+    @media only screen and (min-width: 321px) and (max-width: 600px) {
+    body {
+    font-size: 16px;
+    }
+    
+    .container {
+    padding: 10px;
+    }
+    
+    h1,
+    h2 {
+    font-size: 24px;
+    }
+    
+    pre {
+    font-size: 12px;
+    padding: 5px;
+    }
+    
+    li {
+    margin-bottom: 8px;
+    padding: 8px;
+    }
+    
+    button {
+    font-size: 14px;
+    padding: 8px 16px;
+    }
+    
+    /* Prism.js code highlighting styles */
+    pre[class="language-"] {
+    padding: 5px;
+    font-size: 12px;
+    }
+    
+    code[class*="language-"] {
+    font-size: 12px;
+    }
+    
+    /* Center align content vertically and horizontally */
+    html,
+    body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+    
+    .container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    }
+    
+    #quiz-container,
+    #result-container {
+    flex-grow: 1;
+    width: 100%;
+    max-width: 500px;
+    }
+    }
+      
